@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stealth AI Assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Заголовок -->
+      <header class="app-header">
+        <div class="status-bar">
+          <div class="connection-indicator">
+            <span id="connection-status">Отключено</span>
+          </div>
+          <div class="profile-indicator">
+            Профиль: <span id="current-profile">Общие</span>
+          </div>
+          <div class="status-details">
+            <span id="status-indicator">Готов к работе</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Основной контент -->
+      <main class="app-main">
+        <!-- Панель управления -->
+        <section class="control-panel">
+          <div id="control-buttons" class="control-buttons">
+            <div class="control-group">
+              <button id="listening-toggle" class="control-button primary">
+                ▶️ Начать прослушивание
+              </button>
+              <button id="emergency-hide" class="control-button danger">
+                🚨 Скрыть
+              </button>
+              <button id="optimize-button" class="control-button warning">
+                ⚡ Оптимизировать
+              </button>
+            </div>
+
+            <div class="control-group">
+              <input
+                id="manual-input"
+                type="text"
+                placeholder="Введите вопрос для тестирования..."
+                class="manual-input"
+              />
+              <button id="send-button" class="control-button">
+                📤 Отправить
+              </button>
+            </div>
+
+            <div class="control-group">
+              <input
+                id="simulate-input"
+                type="text"
+                placeholder="Симулировать распознавание речи..."
+                class="manual-input"
+              />
+              <button id="simulate-button" class="control-button">
+                🎭 Симулировать
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Транскрипция речи -->
+        <section class="transcription-section">
+          <h3>🎤 Транскрипция речи</h3>
+          <div class="transcription-container">
+            <div class="transcription-status" id="transcription-status">
+              Готов к прослушиванию
+            </div>
+            <div class="transcription-box">
+              <textarea
+                id="transcription-text"
+                class="transcription-input"
+                placeholder="Здесь будет накапливаться распознанная речь..."
+                rows="4"
+              ></textarea>
+              <div class="transcription-actions">
+                <div class="auto-send-toggle">
+                  <input type="checkbox" id="auto-send-toggle" checked />
+                  <label for="auto-send-toggle">🤖 Автоотправка в AI</label>
+                </div>
+                <button id="send-transcription" class="control-button" disabled>
+                  🚀 Отправить в AI
+                </button>
+                <button id="clear-transcription" class="control-button small">
+                  🗑️ Очистить
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Профили интервью -->
+        <section class="profile-section">
+          <h3>Профили интервью</h3>
+          <div id="profile-buttons" class="profile-buttons">
+            <!-- Кнопки профилей добавляются динамически -->
+          </div>
+        </section>
+
+        <!-- Ответы AI -->
+        <section class="response-section">
+          <div class="section-header">
+            <h3>Ответы AI</h3>
+            <button id="clear-button" class="control-button small">
+              🗑️ Очистить
+            </button>
+          </div>
+          <div id="response-container" class="response-container">
+            <!-- Ответы добавляются динамически -->
+          </div>
+        </section>
+
+        <!-- История вопросов -->
+        <section class="history-section">
+          <h3>История вопросов</h3>
+          <div id="question-history" class="question-history">
+            <!-- История добавляется динамически -->
+          </div>
+        </section>
+      </main>
+
+      <!-- Подвал -->
+      <footer class="app-footer">
+        <div class="shortcuts-info">
+          <small>
+            <strong>Горячие клавиши:</strong>
+            Ctrl+Shift+H - Показать/скрыть | Ctrl+Shift+F12 - Экстренное скрытие
+            | Ctrl+Shift+C - Очистить историю | Ctrl+Shift+1-4 - Профили
+          </small>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Контейнер для уведомлений -->
+    <div id="notifications-container" class="notifications-container"></div>
+
+    <!-- Скрипты -->
+    <script src="app.js"></script>
+  </body>
+</html>
