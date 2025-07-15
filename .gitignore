@@ -134,3 +134,5 @@ openai_key.txt
 
 # MCP серверы конфигурация (содержит токены)
 mcp-servers.json 
+cursor_mcp_config.json
+cursor_mcp_config_extended.json 

@@ -24,7 +24,7 @@
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-github"],
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "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"
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<GITHUB_TOKEN>"
       }
     },
     "filesystem": {
