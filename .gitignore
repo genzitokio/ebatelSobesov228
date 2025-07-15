@@ -131,3 +131,6 @@ openai_key.txt
 *.exe
 *.o
 *.so 
+
+# MCP серверы конфигурация (содержит токены)
+mcp-servers.json 
